@@ -1,5 +1,10 @@
 # czrsortable
 多区域拖放图片（支持前端压缩）
+![image](https://github.com/caixingyue/czrsortable/blob/master/test/preview/1.jpg)
+![image](https://github.com/caixingyue/czrsortable/blob/master/test/preview/2.jpg)
+![image](https://github.com/caixingyue/czrsortable/blob/master/test/preview/3.jpg)
+![image](https://github.com/caixingyue/czrsortable/blob/master/test/preview/4.jpg)
+![image](https://github.com/caixingyue/czrsortable/blob/master/test/preview/5.jpg)
 
 # 使用办法
 ●在需要使用的czrsortable的页面引入js及所需的依赖js文件，css文件未引入时将自动加载
