@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>多区域图片拖动-压缩demo</title>
+<link rel="stylesheet" type="text/css" href="./css/layui.css">
+</head>
+
+<body>
+<form class="layui-form layui-form-pane" style="padding:80px;">
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例一：默认<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" style="float:right" onclick="getdata('multi');">获取参数</button></label>
+        <div class="layui-input-block" id="multi"></div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例二：开启压缩（同时设置高宽900）<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" style="float:right" onclick="getdata('multi1');">获取参数</button></label>
+        <div class="layui-input-block" id="multi1"></div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例三：开启URL服务（其它同案例二）<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" style="float:right" onclick="getdata('multi2');">获取参数</button></label>
+        <div class="layui-input-block" id="multi2"></div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例四：限制图片最多只能添加3张（其它同案例三）<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" style="float:right" onclick="getdata('multi3');">获取参数</button></label>
+        <div class="layui-input-block" id="multi3"></div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例五：使用Sortable参数让两个案例五可以互相拖动图片（其它同案例三）<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" style="float:right" onclick="getdata('multi4');">获取参数</button></label>
+        <div class="layui-input-block" id="multi4"></div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例五：使用Sortable参数让两个案例五可以互相拖动图片（其它同案例三）<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" style="float:right" onclick="getdata('multi5');">获取参数</button></label>
+        <div class="layui-input-block" id="multi5"></div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">案例六：显示默认数据（其它同案例三）<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" style="float:right" onclick="getdata('multi6');">获取参数</button></label>
+        <div class="layui-input-block" id="multi6">
+        	<div class="tile__list" id="multi6_img">
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/1.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/2.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/3.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/4.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/5.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/6.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/7.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/8.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/9.jpg" />
+                </div>
+                <div class="lord">
+                    <span class="button"><span class="jobs del"></span></span>
+                    <span class="button buttonurl"><span class="jobs url"></span></span>
+                    <img src="./test/images/10.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
+
+<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/Sortable.js"></script>
+<script type="text/javascript" src="js/exif.js"></script>
+<script type="text/javascript" src="js/lrz.js"></script>
+<script type="text/javascript" src="js/czrsortable.js"></script>
+
+<script>
+(function(){
+	//案例一
+	$.dragimg('multi');
+	
+	//案例二 - 如果不使用lrz压缩服务可以不用引入exif.js、lrz.js
+	$.dragimg('multi1',{
+		density: 'lrz',//使用lrz压缩服务
+		width: 900,//设置图片宽度
+		height: 900,//设置图片高度
+	});
+	
+	//案例三
+	$.dragimg('multi2',{
+		density: 'lrz',//使用lrz压缩服务
+		url: true,//开启url服务
+		urlTitle: '请输入跳转链接',//设置URL服务窗标题
+		width: 900,//设置图片宽度
+		height: 900,//设置图片高度
+	});
+	
+	//案例四
+	$.dragimg('multi3',{
+		density: 'lrz',//使用lrz压缩服务
+		url: true,//开启url服务
+		urlTitle: '请输入跳转链接',//设置URL服务窗标题
+		width: 900,//设置图片宽度
+		height: 900,//设置图片高度
+		maxcount: 3,//限制图片数量,默认无限制
+		maxerror: '最多只能添加{count}张图片哦',//图片个数超出提示自定义
+	});
+	
+	//案例五
+    $.dragimg('multi4',{
+		density: 'lrz',//使用lrz压缩服务
+		url: true,//开启url服务
+		urlTitle: '请输入跳转链接',//设置URL服务窗标题
+		width: 900,//设置图片宽度
+		height: 900,//设置图片高度
+		//css: 'http://czrsortable.test/css/czrsortable.css',//自定义css路径
+		sorcreate: {
+			group: 'name'
+		}
+	});
+	$.dragimg('multi5',{
+		density: 'lrz',//使用lrz压缩服务
+		url: true,//开启url服务
+		urlTitle: '请输入跳转链接',//设置URL服务窗标题
+		width: 900,//设置图片宽度
+		height: 900,//设置图片高度
+		sorcreate: {
+			group: 'name',
+			//其它参数请参考Sortable.js
+		}
+	});
+	
+	//案例六
+	$.dragimg('multi6',{
+		density: 'lrz',//使用lrz压缩服务
+		url: true,//开启url服务
+		urlTitle: '请输入跳转链接',//设置URL服务窗标题
+		width: 900,//设置图片宽度
+		height: 900,//设置图片高度
+	});
+})();
+
+function getdata(id){
+	layer.msg('记得打开控制台查看哦');
+	console.log($.getdragimg(id));
+}
+</script>
